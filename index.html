@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        .img {
+            transition: 0.5s;
+        }
+
+        .img:hover {
+            opacity: 0.5;
+        }
+
+        .img2 {
+            height: 500px;
+            width: 500px;
+            position: absolute;
+            top: 50%;
+            left: 35%;
+            transform: translatey(-50%);
+        }
+
+        span {
+            font-size: 50px;
+            color: white;
+            position: absolute;
+            right: 300px;
+            top: 50px;
+            cursor: pointer;
+        }
+
+        span:hover {
+            color: red;
+        }
+
+        .model {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="Screenshot_1.png" class="img" />
+    <div class="model">
+        <span onclick="closemodel()">&times</span>
+        <img src="Screenshot_1.png" class="img2" />
+    </div>
+    <script>
+        img = document.getElementsByClassName("img")[0];
+        img2 = document.getElementsByClassName("img2")[0];
+        model = document.getElementsByClassName("model")[0];
+
+        img.addEventListener("click", function () {
+            img.style.display = "none";
+            model.style.display = "block";
+        })
+
+        function closemodel() {
+            img.style.display = "block";
+            model.style.display = "none";
+        }
+    </script>
+</body>
+
+</html>
